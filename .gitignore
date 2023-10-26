@@ -3,6 +3,7 @@ bin/
 etc/
 lib/
 share/
-pyenv.cfg
+pyvenv.cfg
 *.m
 *.pdf
+.ipynb_checkpoints/

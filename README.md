@@ -4,6 +4,8 @@ Python code for the Biomechanics Lab WS23
 
 ## Option A: Use the docker container
 
+**WARNING: This is only works on Linux**
+
 For that docker have to be installed on your system. For Ubuntu you would use apt:
 
 ```bash
@@ -51,6 +53,13 @@ cd bioptim/bioptim/examples/getting_started
 python3 custom_dynamics.py
 ```
 
+A short explanation for the docker commands:
+
+- `-p 8888:8888` - forward the port to the host
+- `-e DISPLAY=$DISPLAY` - use the same display in the container as on the host
+- `--rm` - one-off container (deletes after use)
+- `-v $THIS_REPO_PATH:/home/jovyan/exercises` - mount the exercise folder in the container
+- `-v /tmp/.X11-unix:/tmp/.X11-unix` - mount the x-socket for gui
 
 ## Option B: Set it up yourself
 

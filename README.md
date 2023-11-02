@@ -7,13 +7,13 @@ Python code for the Biomechanics Lab WS23
 For that docker have to be installed on your system. For Ubuntu you would use apt:
 
 ```bash
-sudo apt install docker
+sudo apt install docker.io
 ```
 
 Or follow the [official tutorial](https://docs.docker.com/engine/install/ubuntu/) to get the newest
-version. It's also recommended to follow the [post-installation
-steps](https://docs.docker.com/engine/install/linux-postinstall/). Also don't forget to start your
-docker daemon (on Ubuntu it's `systemctl start docker`).
+version. It's also recommended to follow the first 3 steps of the [post-installation
+tutorial](https://docs.docker.com/engine/install/linux-postinstall/) (non-root access). Also don't
+forget to start your docker daemon (on Ubuntu it's `systemctl start docker`).
 
 Now you can build the docker container for the exercises:
 
@@ -29,24 +29,26 @@ Once it's built you can start the container.
 ```bash
 docker run \
       -p 8888:8888 \
-	  -e DISPLAY=$DISPLAY \
+      -e DISPLAY=$DISPLAY \
       -e JUPYTER_ENABLE_LAB=yes \
       -e JUPYTER_TOKEN=docker \
       --rm \
       -v $THIS_REPO_PATH:/home/jovyan/exercises \
       -v /tmp/.X11-unix:/tmp/.X11-unix \
-	  -it biomechanics-lab
+      -it biomechanics-lab
 ```
 
 **Interactive Shell (bash):**
 
 ```bash
 docker run \
-	  -e DISPLAY=$DISPLAY \
+      -e DISPLAY=$DISPLAY \
       --rm \
       -v $THIS_REPO_PATH:/home/jovyan/exercises \
       -v /tmp/.X11-unix:/tmp/.X11-unix \
-	  -it biomechanics-lab bash
+      -it biomechanics-lab bash
+cd bioptim/bioptim/examples/getting_started
+python3 custom_dynamics.py
 ```
 
 

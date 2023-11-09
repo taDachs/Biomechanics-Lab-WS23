@@ -24,7 +24,8 @@ cd $THIS_REPO_PATH
 docker build docker -t biomechanics-lab
 ```
 
-Once it's built you can start the container. 
+Once it's built you can start the container. Depending on your setup you might have to call `xhost +` before 
+to allow access to the x-socket.
 
 **Jupyter Lab:**
 

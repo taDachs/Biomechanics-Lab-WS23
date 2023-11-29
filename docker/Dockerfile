@@ -10,6 +10,7 @@ RUN mamba install -y -c conda-forge \
   jupyter_contrib_nbextensions \
   ipywidgets \
   pyqtgraph \
+  GitPython \
   git 
   
 
